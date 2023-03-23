@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('about', 5000);
             $table->text('refund', 5000);
             $table->text('purchase_guide', 5000);
-            $table->text('privacy',5000);
             $table->text('privacy');
             $table->string('android_app_link');
             $table->string('ios_app_link');

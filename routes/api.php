@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\SiteInfoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,9 +20,13 @@ use App\Http\Controllers\Admin\ContactController;
 //     return $request->user();
 // });
 
-
+//Get Visitor
 Route::get('/getvisitor', [VisitorController::class, 'GetVisitorDetails']);
 
+//Site Info
 Route::post('/postcontact', [ContactController::class, 'PostContactDetails']);
+
+//Site Info Route
+Route::get('/allsiteinfo', [SiteInfoController::class, 'AllSiteinfo']);
 
 
