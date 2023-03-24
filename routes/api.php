@@ -5,20 +5,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\SiteInfoController;
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+use App\Http\Controllers\User\AuthController;
+use App\Http\Controllers\User\ForgetController;
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
+
+
+
+// Register Routes 
+Route::post('/login', [AuthController::class, 'Login']);
+
+Route::post('/register', [AuthController::class, 'Register']);
+
+// Forget Password Routes 
+Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']);
+
+
+
 
 //Get Visitor
 Route::get('/getvisitor', [VisitorController::class, 'GetVisitorDetails']);
@@ -28,5 +31,3 @@ Route::post('/postcontact', [ContactController::class, 'PostContactDetails']);
 
 //Site Info Route
 Route::get('/allsiteinfo', [SiteInfoController::class, 'AllSiteinfo']);
-
-
