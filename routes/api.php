@@ -7,8 +7,8 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\SiteInfoController;
 use App\Http\Controllers\User\AuthController;
 use App\Http\Controllers\User\ForgetController;
-
-
+use App\Http\Controllers\User\ResetController;
+use App\Http\Controllers\User\UserController;
 
 
 
@@ -19,6 +19,13 @@ Route::post('/register', [AuthController::class, 'Register']);
 
 // Forget Password Routes 
 Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']);
+
+//Reset Password Routes
+Route::post('/resetpassword', [ResetController::class, 'ResetPassword']);
+
+//Current User Route
+Route::get('/user', [UserController::class, 'User'])->middleware('auth:api');
+
 
 
 

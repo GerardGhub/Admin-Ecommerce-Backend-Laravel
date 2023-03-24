@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-
 use App\Http\Requests\RegisterRequest;
-use DB;
 use Illuminate\Support\Facades\Hash;
 use Exception;
+
 
 class AuthController extends Controller
 {
