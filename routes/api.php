@@ -10,6 +10,7 @@ use App\Http\Controllers\User\ForgetController;
 use App\Http\Controllers\User\ResetController;
 use App\Http\Controllers\User\UserController;
 
+use App\Http\Controllers\Admin\CategoryController;
 
 
 // Register Routes 
@@ -38,3 +39,7 @@ Route::post('/postcontact', [ContactController::class, 'PostContactDetails']);
 
 //Site Info Route
 Route::get('/allsiteinfo', [SiteInfoController::class, 'AllSiteinfo']);
+
+
+//All Category
+Route::get('/allcategory', [CategoryController::class, 'AllCategory']);
